@@ -1,2 +1,16 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h1>Admin Dashboard</h1>
+<h5>Products Count: <%=  @products_count %> </h5>
+<h5>Categories Count: <%=  @categories_count %></h5>
+
+<button type="button" class="btn btn-secondary btn-lg">
+  <%= link_to "Product", "/admin/products" %>
+</button>  
+<button type="button" class="btn btn-secondary btn-lg">
+  <%= link_to "Furniture", "/categories/3" %>
+</button> 
+<button type="button" class="btn btn-secondary btn-lg">
+  <%= link_to "Electronics", "/categories/2" %>
+</button> 
+<button type="button" class="btn btn-secondary btn-lg">
+  <%= link_to "Apparel", "/categories/1" %>
+</button> 

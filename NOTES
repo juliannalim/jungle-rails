@@ -1,0 +1,9 @@
+<div>
+  <% @products.each do |product| %>
+    <%= render 'products', item: item%>
+</div>
+<p>Category Count:</p>
+<div>
+<% @categories.each do |category| %>
+  <%= render 'categories', item: item%>
+</div>
