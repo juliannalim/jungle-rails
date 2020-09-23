@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Product Details", type: :feature, js: true do
-
+RSpec.feature "AddToCarts", type: :feature, js: true do
   # SETUP
   before :each do
     @category = Category.create! name: 'Apparel'
@@ -17,17 +16,16 @@ RSpec.feature "Product Details", type: :feature, js: true do
     end
   end
 
-  scenario "users can navigate from the home page to the product detail page by clicking on a product" do
+  scenario "users can click the 'Add to Cart' button for a product on the home page and in doing so their cart increases by one" do
     # ACT
     visit root_path
 
     # DEBUG
     #findelement 
-    first('.product').click_link('Details')
-    #save_screenshot
+    first('.product').click_button('Add')
+    save_screenshot
 
     # VERIFY
-    # in show.html.erb product file
-    expect(page).to have_css 'article.product-detail'
+    expect(page).to have_text 'My Cart (1)'
   end
 end
