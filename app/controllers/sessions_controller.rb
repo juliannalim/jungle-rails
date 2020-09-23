@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
       redirect_to '/'
     else
     # If user's login doesn't work, send them back to the login form.
-      redirect_to '/login'
+    flash[:notice] = 'Failed to log in'
+    redirect_to '/login'
     end
   end
 
@@ -18,4 +19,6 @@ class SessionsController < ApplicationController
     redirect_to '/login'
   end
 
+# this might help with the messaging
+# https://stackoverflow.com/questions/43506832/rails-5-displaying-error-messages
 end
